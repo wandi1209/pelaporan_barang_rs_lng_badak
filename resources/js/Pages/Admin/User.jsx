@@ -186,8 +186,10 @@ export default function User({ auth, user }) {
                           <InputLabel htmlFor="role" value="Role" />
 
                           <select 
+                            id='role'
+                            name='role'
                             className="select select-bordered w-full"
-                            onChange={(e) => setData('unit', e.target.value)}
+                            onChange={(e) => setData('role', e.target.value)}
                           >
                             <option disabled selected value="" className='capitalize'>-- Pilih Role --</option>
                             <option value="admin">Admin</option>

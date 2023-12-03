@@ -375,7 +375,7 @@ export default function Asset({ auth, asset }) {
                 <div>
                   <div className='flex items-center justify-between py-2 px-4 bg-cyan-900 text-white text-xl font-semibold uppercase tracking-widest'>
                     <span className='ml-2'>
-                      import nomor badge
+                      import nomor inventaris
                     </span>
                     <Icon onClick={closeModal} className='p-2 cursor-pointer hover:bg-cyan-950 transition duration-300 rounded-lg'>
                       close

@@ -101,7 +101,7 @@ export default function Ruangan({ auth, ruangan, unit }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
-      header={<h2 className="font-semibold text-xl leading-tight">Unit</h2>}
+      header={<h2 className="font-semibold text-xl leading-tight">Ruangan</h2>}
     >
       <Head title="Ruangan" />
 
