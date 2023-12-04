@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Des 2023 pada 00.27
+-- Waktu pembuatan: 04 Des 2023 pada 00.57
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -268,13 +268,6 @@ CREATE TABLE `foto_laporan` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `foto_laporan`
---
-
-INSERT INTO `foto_laporan` (`id`, `foto`, `id_laporan`, `created_at`, `updated_at`) VALUES
-(96, 'CCTV.jpg', 55, '2023-12-02 15:42:43', '2023-12-02 15:42:43');
-
 -- --------------------------------------------------------
 
 --
@@ -297,13 +290,6 @@ CREATE TABLE `laporan` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `id_user` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `laporan`
---
-
-INSERT INTO `laporan` (`id`, `id_unit`, `id_ruangan`, `id_asset`, `kode`, `nama_barang`, `status`, `kategori`, `biaya_perbaikan`, `keterangan`, `catatan_petugas`, `created_at`, `updated_at`, `id_user`) VALUES
-(55, 2, 2, 188, 'RSB23120201', 'CCTV', 'Selesai', 'non medis', 75000.00, 'CCTV mengarah kebawah', 'Perbaikan Selesai Harap Tidak Memutar Paksa CCTV', '2023-12-02 15:42:43', '2023-12-02 16:25:43', 6);
 
 -- --------------------------------------------------------
 
@@ -732,8 +718,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `jabatan`, `nomor_badge`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Wandi', 'PKL', '406154', 'wndi1209@gmail.com', 'admin', '2023-11-23 16:06:06', '$2y$12$GoQiv5BPCgWn6XMyzsZ9UeP/KifiUTYPXuGHFk6XG51iy9hZBKkt2', NULL, '2023-11-23 16:05:42', '2023-11-23 16:06:06'),
-(3, 'Rima Fakhirah', 'PKL', '406152', 'rimafakhirah15@gmail.com', 'petugas', '2023-12-01 00:28:11', '$2y$12$JdU7eLmeSqDpLn2Rd0HzU.qatftB92P.yrNxpQeeJRwhX9rOujtxG', NULL, '2023-11-20 17:52:27', '2023-12-01 00:28:11'),
-(6, 'Sultan Syarif', 'PKL`', '406153', 'sultansyarif602@gmail.com', 'user', '2023-12-02 14:23:05', '$2y$12$nc5/pP0nJC/CePS08YvwCeEdmicy/FqYTvSReWaE/hcyHnOGT3YUu', NULL, '2023-12-02 13:39:57', '2023-12-02 14:23:05');
+(3, 'Rima Fakhirah', 'PKL', '406152', 'rimafakhirah15@gmail.com', 'user', '2023-12-01 00:28:11', '$2y$12$JdU7eLmeSqDpLn2Rd0HzU.qatftB92P.yrNxpQeeJRwhX9rOujtxG', NULL, '2023-11-20 17:52:27', '2023-12-03 23:51:35'),
+(6, 'Sultan Syarif', 'PKL', '406153', 'sultansyarif602@gmail.com', 'petugas', '2023-12-02 14:23:05', '$2y$12$nc5/pP0nJC/CePS08YvwCeEdmicy/FqYTvSReWaE/hcyHnOGT3YUu', NULL, '2023-12-02 13:39:57', '2023-12-03 23:47:29');
 
 --
 -- Indexes for dumped tables
