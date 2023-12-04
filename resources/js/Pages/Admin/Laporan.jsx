@@ -30,7 +30,11 @@ export default function Laporan({ auth, laporan }) {
     { Header: 'No', accessor: 'index', Cell: (row) => row.row.index + 1 },
     { Header: 'Kode Laporan', accessor: 'kode' },
     { Header: 'Pelapor', accessor: 'user.name' },
-    { Header: 'Nama Barang', accessor: 'nama_barang' },
+    { Header: 'Nama Barang', accessor: 'nama_barang', 
+      Cell : (row) => (
+        row.row.original.asset ? row.row.original.asset.nama_barang : row.row.original.nama_barang
+      )
+    },
     { Header: 'Nomor Asset', accessor: 'asset.nomor',
         Cell: ({ value }) => value ? value : '-'
     },

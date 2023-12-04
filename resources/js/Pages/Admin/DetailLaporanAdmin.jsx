@@ -283,7 +283,7 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                     <div className='ml-4'>{laporan.kode}</div>
 
                                     <div className='font-bold mt-2'>Nama Barang :</div>
-                                    <div className='ml-4'>{laporan.nama_barang}</div>
+                                    <div className='ml-4'>{laporan.asset ? laporan.asset.nama_barang : laporan.nama_barang}</div>
 
                                     <div className='font-bold mt-2'>Nomor Asset :</div>
                                     <div className='ml-4'>{laporan.asset ? laporan.asset.nomor : '-'}</div>
