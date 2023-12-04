@@ -277,7 +277,7 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                 ))}
                             </div>
                             : null}
-                            <div className='flex flex-wrap lg:w-2/3 text-gray-800 w-full rounded-lg pr-14 pb-5 lg:mx-12'>
+                            <div className='flex flex-wrap lg:flex-nowrap lg:w-2/3 text-gray-800 w-full rounded-lg pr-14 pb-5 lg:mx-12'>
                                 <div className='pl-4 lg:w-1/2'>
                                     <div className='font-bold mt-2'>Kode Laporan :</div>
                                     <div className='ml-4'>{laporan.kode}</div>
