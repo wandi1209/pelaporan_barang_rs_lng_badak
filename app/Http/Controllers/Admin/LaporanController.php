@@ -19,7 +19,7 @@ class LaporanController extends Controller
      */
     public function index(Request $request)
     {
-        $laporan = Laporan::orderBy('nama_barang', 'asc')
+        $laporan = Laporan::orderBy('id', 'desc')
                 ->with(['unit', 'ruangan', 'asset', 'user']);
         // Set created_at awal dan created_at akhir dengan nilai default
         $tanggalAwal = $request->input('startDate', Carbon::now()->subMonth()->format('Y-m-d'));

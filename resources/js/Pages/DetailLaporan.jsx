@@ -313,7 +313,7 @@ export default function DetailLaporan({ auth, laporan, foto_laporan, asset, unit
                                         <InputError message={errors.nama_barang} className="mt-2" />
                                     </div>
                                     <div className='mt-4'>
-                                    <InputLabel htmlFor="id_asset" value="Kode Inventaris" />
+                                    <InputLabel htmlFor="id_asset" value="Nomor Aset" />
                                     <Select
                                         id="id_asset"
                                         name="id_asset"

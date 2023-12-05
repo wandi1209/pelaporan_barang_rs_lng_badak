@@ -36,7 +36,7 @@ class AssetController extends Controller
 
             Excel::import(new AssetImport, $request->file('file')->store('temp'));
 
-            return redirect()->route('admin.asset.index')->with('success', 'Import Nomor Inventaris Berhasil');
+            return redirect()->route('admin.asset.index')->with('success', 'Import Nomor Aset Berhasil');
         } catch (\Exception $e) {
             return redirect()->route('admin.asset.index')->with('error', $e->getMessage());
         }
@@ -64,7 +64,7 @@ class AssetController extends Controller
                 'kondisi' => $request->kondisi,
             ]);
 
-            return redirect()->route('admin.asset.index')->with('success', 'Nomor Inventaris Berhasil Di Tambahkan');
+            return redirect()->route('admin.asset.index')->with('success', 'Nomor Aset Berhasil Di Tambahkan');
         } catch (\Exception $e) {
             return redirect()->route('admin.asset.index')->with('error', $e->getMessage());
         }
@@ -117,7 +117,7 @@ class AssetController extends Controller
             $asset->kondisi = $request->kondisi_edit;
             $asset->save();
 
-            return redirect()->route('admin.asset.index')->with('success', 'Nomor Inventaris Berhasil Di Update');
+            return redirect()->route('admin.asset.index')->with('success', 'Nomor Aset Berhasil Di Update');
         } catch (\Exception $e) {
             return redirect()->route('admin.asset.index')->with('error', $e->getMessage());
         }
@@ -133,11 +133,11 @@ class AssetController extends Controller
             $laporan = Laporan::where('id_asset', $asset->id)->first();
 
             if(!empty($laporan)){
-                return redirect()->route('admin.asset.index')->with('error', 'Tidak Dapat Menghapus Nomor Inventaris Yang Terkait Dengan Laporan');
+                return redirect()->route('admin.asset.index')->with('error', 'Tidak Dapat Menghapus Nomor Aset Yang Terkait Dengan Laporan');
             }
             $asset->delete();
 
-            return redirect()->route('admin.asset.index')->with('success', 'Nomor Inventaris Dihapus Secara Permanen');
+            return redirect()->route('admin.asset.index')->with('success', 'Nomor Aset Dihapus Secara Permanen');
         } catch (\Exception $e) {
             return redirect()->route('admin.asset.index')->with('error', $e->getMessage());
         }

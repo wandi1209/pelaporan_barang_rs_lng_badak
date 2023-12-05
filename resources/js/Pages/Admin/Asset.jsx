@@ -139,9 +139,9 @@ export default function Asset({ auth, asset }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
-      header={<h2 className="font-semibold text-xl leading-tight">Nomor Inventaris</h2>}
+      header={<h2 className="font-semibold text-xl leading-tight">Nomor Aset</h2>}
     >
-      <Head title="Nomor Inventaris" />
+      <Head title="Nomor Aset" />
 
       <div>
         <div className="mx-auto">
@@ -154,7 +154,7 @@ export default function Asset({ auth, asset }) {
                     playlist_add
                   </Icon>
                   <span className='ml-1 lg:block hidden'>
-                    Tambah Nomor Inventaris
+                    Tambah Nomor Aset
                   </span>
                 </ButtonTambah>
                 <ButtonImport onClick={openImportModal}>
@@ -162,7 +162,7 @@ export default function Asset({ auth, asset }) {
                     PUBLISH
                   </Icon>
                   <span className='ml-1 lg:block hidden'>
-                    Import Nomor Inventaris
+                    Import Nomor Aset
                   </span>
                 </ButtonImport>
               </div>
@@ -172,7 +172,7 @@ export default function Asset({ auth, asset }) {
                 <div>
                   <div className='flex items-center justify-between py-2 px-4 bg-cyan-900 text-white text-xl font-semibold uppercase tracking-widest'>
                     <span className='ml-2'>
-                      tambah nomor inventaris
+                      tambah nomor Aset
                     </span>
                     <Icon onClick={closeModal} className='p-2 cursor-pointer hover:bg-cyan-950 transition duration-300 rounded-lg'>
                       close
@@ -180,7 +180,7 @@ export default function Asset({ auth, asset }) {
                   </div>
                   <div className='px-4 py-2 bg-gray-200'>
                       <div>
-                          <InputLabel htmlFor="nomor" value="Nomor Inventaris" />
+                          <InputLabel htmlFor="nomor" value="Nomor Aset" />
 
                           <TextInput
                               id="nomor"
@@ -272,7 +272,7 @@ export default function Asset({ auth, asset }) {
                 <div>
                   <div className='flex items-center justify-between py-2 px-4 bg-cyan-900 text-white text-xl font-semibold uppercase tracking-widest'>
                     <span className='ml-2'>
-                      edit nomor inventaris
+                      edit nomor Aset
                     </span>
                     <Icon onClick={closeModal} className='p-2 cursor-pointer hover:bg-cyan-950 transition duration-300 rounded-lg'>
                       close
@@ -280,7 +280,7 @@ export default function Asset({ auth, asset }) {
                   </div>
                   <div className='px-4 py-2 bg-gray-200'>
                       <div>
-                          <InputLabel htmlFor="nomor_edit" value="Nomor Inventaris" />
+                          <InputLabel htmlFor="nomor_edit" value="Nomor Aset" />
 
                           <TextInput
                               id="nomor_edit"
@@ -375,7 +375,7 @@ export default function Asset({ auth, asset }) {
                 <div>
                   <div className='flex items-center justify-between py-2 px-4 bg-cyan-900 text-white text-xl font-semibold uppercase tracking-widest'>
                     <span className='ml-2'>
-                      import nomor inventaris
+                      import nomor Aset
                     </span>
                     <Icon onClick={closeModal} className='p-2 cursor-pointer hover:bg-cyan-950 transition duration-300 rounded-lg'>
                       close

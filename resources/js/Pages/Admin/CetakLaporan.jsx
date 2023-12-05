@@ -68,11 +68,11 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
 
             <div className="lg:py-12 pt-6">
                 <div className="mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-cyan-900/60 overflow-hidden shadow-sm sm:rounded-lg p-6">
+                    <div className="bg-cyan-900/60 overflow-hidden shadow-sm sm:rounded-lg p-6 animate__animated animate__fadeIn animate__slower">
                         <form className='mb-4'>
                             <div className="text-4xl tracking-widest mb-2 bg-cyan-800 rounded-lg py-4 font-extrabold text-white text-center">Cetak Laporan</div>
                             <div>
-                                <InputLabel htmlFor="kode" value="Kode Barang" className=' text-white' />
+                                <InputLabel htmlFor="kode" value="Kode Barang" className='text-white' />
 
                                 <TextInput
                                     id="kode"
@@ -86,7 +86,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.kode} className="mt-2" />
                             </div>
                             <div className='mt-4'>
-                                <InputLabel htmlFor="id_asset" value="Nomor Asset" className=' text-white' />
+                                <InputLabel htmlFor="id_asset" value="Nomor Asset" className='text-white' />
 
                                 <Select
                                     id="id_asset"
@@ -99,7 +99,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.id_asset} className="mt-2" />
                             </div>
                             <div className='mt-4'>
-                                <InputLabel htmlFor="id_unit" value="Unit Barang Berada" className=' text-white' />
+                                <InputLabel htmlFor="id_unit" value="Unit Barang Berada" className='text-white' />
 
                                 <Select
                                     id="id_unit"
@@ -114,7 +114,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.id_unit} className="mt-2" />
                             </div>
                             <div className='mt-4'>
-                                <InputLabel htmlFor="id_ruangan" value="Ruangan Barang Berada" className=' text-white' />
+                                <InputLabel htmlFor="id_ruangan" value="Ruangan Barang Berada" className='text-white' />
 
                                 <Select
                                     id="id_ruangan"
@@ -129,7 +129,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.id_ruangan} className="mt-2" />
                             </div>
                             <div className='mt-4'>
-                                <InputLabel htmlFor="kategori" value="Kategori" className=' text-white' />
+                                <InputLabel htmlFor="kategori" value="Kategori" className='text-white' />
 
                                 <Select
                                     id="kategori"
@@ -144,7 +144,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.kategori} className="mt-2" />
                             </div>
                             <div className='mt-4'>
-                                <InputLabel htmlFor="tanggal_awal" value="Tanggal Awal" className=' text-white' />
+                                <InputLabel htmlFor="tanggal_awal" value="Tanggal Awal" className='text-white' />
 
                                 <TextInput
                                     type="date"
@@ -156,7 +156,7 @@ export default function CetakLaporan({ auth, asset, unit, ruangan }) {
                                 <InputError message={errors.tanggal_awal} className="mt-2" />
                             </div>
                             <div className='my-4'>
-                                <InputLabel htmlFor="tanggal_akhir" value="Tanggal Akhir" className=' text-white' />
+                                <InputLabel htmlFor="tanggal_akhir" value="Tanggal Akhir" className='text-white' />
 
                                 <TextInput
                                     type="date"

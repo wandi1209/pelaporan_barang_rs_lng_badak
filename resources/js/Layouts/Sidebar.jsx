@@ -71,7 +71,7 @@ export default function Sidebar({ auth, isMenuOpen }) {
                         web_asset
                     </Icon>
                     <span className="pl-2">
-                        Nomor Inventaris
+                        Nomor Aset
                     </span>
                 </Link>
                 <Link href={route('admin.laporan.index')} className={`flex items-center hover:bg-gray-200 rounded-xl p-3 m-1 trasnsition-transform duration-300 text-lg font-medium text-gray-700 ${url.includes('laporan') ? 'bg-gray-200' : 'hover:scale-105'}`}>

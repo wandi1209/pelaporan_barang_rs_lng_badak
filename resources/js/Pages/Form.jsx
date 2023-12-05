@@ -100,7 +100,7 @@ export default function Form({ auth, unit, ruangan, inventaris }) {
                                     <InputError message={errors.nama_barang} className="mt-2" />
                                 </div>
                                 <div className='mt-4'>
-                                    <InputLabel htmlFor="asset" value="Kode Inventaris" />
+                                    <InputLabel htmlFor="asset" value="Nomor Aset" />
                                     <Select
                                         id="asset"
                                         name="asset"

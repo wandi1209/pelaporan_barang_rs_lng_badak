@@ -27,7 +27,7 @@ class LaporanSayaController extends Controller
         $endDate = $endDate ?: Carbon::now()->toDateString();
 
         // Use whereBetween to filter data based on the date range
-        $laporan = Laporan::orderBy('nama_barang', 'asc')
+        $laporan = Laporan::orderBy('id', 'desc')
             ->where('id_user', auth()->user()->id)
             ->whereBetween('created_at', [$startDate . ' 00:00:00', $endDate . ' 23:59:59'])
             ->with(['unit', 'ruangan', 'asset'])

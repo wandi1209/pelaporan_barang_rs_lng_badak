@@ -48,7 +48,7 @@ const DataTable = ({ columns, data, buttonCrud }) => {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()} className="py-4 font-semibold text-center text-white text-xs lg:text-xl">
+                <th {...column.getHeaderProps()} className="py-4 font-semibold text-center text-white text-xs lg:text-lg">
                   {column.render('Header')}
                 </th>
               ))}
