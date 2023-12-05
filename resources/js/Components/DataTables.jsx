@@ -61,7 +61,7 @@ const DataTable = ({ columns, data, buttonCrud }) => {
             return (
               <tr {...row.getRowProps()} className="border-t border-gray-300 bg-gray-200">
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className="px-4 py-2 text-center text-gray-700 text-xs lg:text-lg">
+                  <td {...cell.getCellProps()} className="px-4 py-2 text-center text-gray-700 lg:text-base sm:text-sm">
                     {cell.render('Cell')}
                   </td>
                 ))}
