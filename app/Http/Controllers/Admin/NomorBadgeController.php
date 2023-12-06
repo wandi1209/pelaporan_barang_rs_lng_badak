@@ -104,27 +104,25 @@ class NomorBadgeController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-{
-    try {
-        $nobad = NomorBadge::findOrFail($id);
+    {
+        try {
+            $nobad = NomorBadge::findOrFail($id);
 
-        $loggedInUser = Auth::user();
-        if ($loggedInUser && $loggedInUser->nomor_badge === $nobad->nomor_pekerja) {
-            return redirect()->route('admin.badge.index')->with('error', 'Anda tidak diizinkan menghapus nomor badge Anda sendiri.');
+            $loggedInUser = Auth::user();
+            if ($loggedInUser && $loggedInUser->nomor_badge === $nobad->nomor_pekerja) {
+                return redirect()->route('admin.badge.index')->with('error', 'Anda tidak diizinkan menghapus nomor badge Anda sendiri.');
+            }
+
+            $user = User::where('nomor_badge', $nobad->nomor_pekerja)->first();
+
+            if ($user) {
+                return redirect()->route('admin.badge.index')->with('error', 'Tidak Dapat Menghapus Nomor Badge Yang Terkait Dengan User');
+            } else {
+                $nobad->delete();
+                return redirect()->route('admin.badge.index')->with('success', 'Nomor Badge Berhasil Di Hapus.');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('admin.badge.index')->with('error', $e->getMessage());
         }
-
-        $user = User::where('nomor_badge', $nobad->nomor_pekerja)->first();
-
-        if (!empty($user)) {
-            $user->delete();
-            $nobad->delete();
-            return redirect()->route('admin.badge.index')->with('success', 'Nomor Badge dan User Terkait Berhasil Di Hapus.');
-        } else {
-            $nobad->delete();
-            return redirect()->route('admin.badge.index')->with('success', 'Nomor Badge Berhasil Di Hapus.');
-        }
-    } catch (\Exception $e) {
-        return redirect()->route('admin.badge.index')->with('error', $e->getMessage());
     }
-}
 }

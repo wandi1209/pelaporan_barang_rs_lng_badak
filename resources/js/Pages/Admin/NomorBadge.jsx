@@ -83,7 +83,7 @@ export default function NomorBadge({ auth, nomor_badge }) {
     try {
       const confirmed = await Swal.fire({
         title: 'Apa Anda Yakin?',
-        text: 'Nomor Badge dan User Yang Terkait Akan Dihapus Secara Permanen',
+        text: 'Nomor Badge Akan Dihapus Secara Permanen',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',

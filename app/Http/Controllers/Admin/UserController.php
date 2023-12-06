@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Laporan;
 use App\Models\User;
 use Inertia;
 
@@ -100,8 +101,12 @@ class UserController extends Controller
             if(Auth()->user()->id === $user->id) {
                 return redirect()->route('admin.user.index')->with('error', 'Tidak Dapat Menghapus User Sendiri');
             }
-            $user->delete();
-
+            $laporan = Laporan::where('id_user', $user->id)->get();
+            if($laporan){
+                return redirect()->route('admin.user.index')->with('error', 'Tidak Dapat Menghapus User Yang Memiliki Laporan');
+            } else {
+                $user->delete();
+            }
             return redirect()->route('admin.user.index')->with('success', 'User Dihapus Secara Permanen');
         } catch (\Exception $e) {
             return redirect()->route('admin.user.index')->with('error', $e->getMessage());
