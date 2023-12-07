@@ -87,7 +87,7 @@ export default function Login({ status, canResetPassword }) {
                             href={route('register')}
                             className="underline text-sm text-white hover:text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                           No Have Account ?
+                           Don't Have Account ?
                         </Link>
                         {canResetPassword && (
                             <Link
