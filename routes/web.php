@@ -34,6 +34,9 @@ Route::get('/', function () {
 // Route Sesuai Role
 Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/sidebar/count', [HomeController::class, 'sidebar'])->name('sidebar.get');
+Route::get('/developer', function(){
+    return Inertia::render('Developer');
+})->name('developer');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

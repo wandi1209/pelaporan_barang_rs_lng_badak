@@ -270,9 +270,11 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                                 {foto.foto}
                                             </span>
                                         </a>
+                                        {laporan.status === 'Menunggu Respon Petugas' || auth.user.role === 'admin' ?
                                         <span onClick={() => hapusFoto(foto.id)} className='cursor-pointer absolute top-2 right-2 rounded-full text-center flex items-center px-2 py-1 hover:bg-gray-600 hover:text-white transition duration-300'>
                                             <Icon className='text-sm'>close</Icon>
                                         </span>
+                                        : null}
                                     </div>
                                 ))}
                             </div>
