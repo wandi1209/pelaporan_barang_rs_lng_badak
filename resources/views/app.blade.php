@@ -30,7 +30,7 @@
             .bg-main {
                 background-image: url('{{ asset('img/bg.svg') }}');
                 background-size: cover;
-                background-repeat: no-repeat;
+                background-repeat: repeat;
                 background-position: center;
             }
         </style>
