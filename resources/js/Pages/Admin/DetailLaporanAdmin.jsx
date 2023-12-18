@@ -461,7 +461,7 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                 </div>
                                 <div className='px-4 py-2 bg-gray-200'>
                                     <div className='mt-4'>
-                                    <InputLabel htmlFor="gambar" value="Bukti Barang Rusak" />
+                                    <InputLabel htmlFor="gambar" value="Bukti Barang" />
 
                                     <input
                                         id="gambar"
