@@ -225,6 +225,7 @@ class LaporanController extends Controller
     public function hapus($id){
         try {
             $foto = FotoLaporan::find($id);
+            $laporanId = $foto->id_laporan;
             $foto->delete();
 
             return redirect()->route('admin.laporan.show', $laporanId)->with('success', 'Foto Dihapus');
