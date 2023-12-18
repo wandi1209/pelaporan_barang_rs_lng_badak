@@ -220,8 +220,8 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                 <div className="mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-3 bg-cyan-900 text-white text-center text-2xl font-extrabold">Detail Laporan</div>
-                        {laporan.status == 'Menunggu Respon Petugas' || auth.user.role == 'admin' ?
                             <div className='w-full flex justify-center pt-2'>
+                            {laporan.status != 'Menunggu Respon Petugas' || auth.user.role == 'admin' ?
                                 <button 
                                     className='flex items-center mx-2 bg-gray-600 text-white p-2 rounded-lg hover:scale-105 transform duration-300 hover:bg-gray-700'
                                     onClick={() => openModalUpload()}
@@ -233,6 +233,9 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                         Upload Bukti Laporan
                                     </span>
                                 </button>
+                                : null}
+                            {laporan.status == 'Menunggu Respon Petugas' || auth.user.role == 'admin' ?
+                            <>
                                 <button 
                                     className='flex items-center mx-2 bg-green-600 text-white p-2 rounded-lg hover:scale-105 transform duration-300 hover:bg-green-700'
                                     onClick={() => openModalEdit()}
@@ -255,7 +258,9 @@ export default function DetailLaporanAdmin({ auth, laporan, foto_laporan, asset,
                                         Hapus Laporan
                                     </span>
                                 </button>
-                            </div>: null}
+                                </>
+                                : null}
+                            </div>
                         <div className='flex flex-wrap lg:flex-nowrap bg-gray-200 p-4 m-3 rounded-lg'>
                             {foto_laporan ? 
                             <div className="bg-gray-100 p-3 rounded-box w-1/3 rounded-lg w-96 m-3">
