@@ -162,7 +162,6 @@ class LaporanController extends Controller
 
     public function upload(Request $request, $id) {
         $laporan = Laporan::findOrFail($id);
-        
         $gambarFiles = $request->file('gambar');
         try{
             foreach ($gambarFiles as $gambarFile) {
@@ -225,12 +224,12 @@ class LaporanController extends Controller
     public function hapus($id){
         try {
             $foto = FotoLaporan::find($id);
-            $laporanId = $foto->id_laporan;
+            $laporan = Laporan::find($foto->id_laporan);
             $foto->delete();
 
-            return redirect()->route('admin.laporan.show', $laporanId)->with('success', 'Foto Dihapus');
+            return redirect()->route('admin.laporan.show', $laporan->id)->with('success', 'Foto Dihapus');
         } catch (\Exception $e) {
-            return redirect()->route('admin.laporan.show', $laporanId)->with('error', $e->getMessage());
+            return redirect()->route('admin.laporan.show', $laporan->id)->with('error', $e->getMessage());
         }
     }
 }
