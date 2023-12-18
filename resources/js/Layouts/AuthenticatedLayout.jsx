@@ -116,7 +116,7 @@ export default function Authenticated({ user, header, children }) {
                 </div>
             </nav>
 
-            {header && adminSidebar ? (
+            {header && adminSidebar || user.role != 'user' ? (
                 <header className="text-white shadow fixed z-40 w-full pt-16 flex items-center bg-cyan-900">
                         <Icon 
                             className='fixed p-2 ml-4 hover:bg-gray-400 hover:scale-110 transition-transform duration-300 rounded-xl cursor-pointer'

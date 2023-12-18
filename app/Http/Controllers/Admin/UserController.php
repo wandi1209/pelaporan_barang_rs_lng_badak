@@ -101,6 +101,9 @@ class UserController extends Controller
             if(Auth()->user()->id === $user->id) {
                 return redirect()->route('admin.user.index')->with('error', 'Tidak Dapat Menghapus User Sendiri');
             }
+            if(Auth()->user()->nomor_badge === "406152") {
+                return redirect()->route('admin.user.index')->with('error', 'Tidak Dapat Menghapus Akun Developer');
+            }
             $laporan = Laporan::where('id_user', $user->id)->get();
             if($laporan){
                 return redirect()->route('admin.user.index')->with('error', 'Tidak Dapat Menghapus User Yang Memiliki Laporan');

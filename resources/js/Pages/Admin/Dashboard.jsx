@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import { Pie } from 'react-chartjs-2';
 import Icon from '@/Components/Icon';
-import {Chart, ArcElement, Tooltip, Legend} from 'chart.js';
+import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 Chart.register(ArcElement, Tooltip, Legend);
 
 export default function Dashboard({ auth, pieChartData, menunggu, proses, selesai, laporanAll, currentYearReports,   currentMonthReports, currentDayReports }) {
@@ -17,8 +17,8 @@ export default function Dashboard({ auth, pieChartData, menunggu, proses, selesa
             data: pieChartData.values,
             backgroundColor: [
             'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            'rgb(255, 205, 86)',
+            'rgb(0, 255, 0)'
             ],
             hoverOffset: 4
         }]

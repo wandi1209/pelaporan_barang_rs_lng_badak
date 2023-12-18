@@ -68,7 +68,7 @@ export default function Form({ auth, unit, ruangan, inventaris }) {
                     'X-CSRF-Token': csrf_token,
                 },
             });
-            await Inertia.visit(route('laporan.saya.index'), { forceNetwork: true });
+            window.location.reload();
         } catch (error) {
             console.error('Error submitting form:', error);
         }

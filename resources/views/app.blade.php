@@ -35,6 +35,7 @@
             }
         </style>
         @inertia
+        @include('flash::message')
         @include('sweetalert::alert')
     </body>
 </html>
