@@ -166,9 +166,9 @@ class LaporanController extends Controller
         $gambarFiles = $request->file('gambar');
         try{
             foreach ($gambarFiles as $gambarFile) {
-                $originalName = $gambarFile->getClientOriginalName();
+                $originalName = 'Petugas__' . $gambarFile->getClientOriginalName();
                 $extension = $gambarFile->getClientOriginalExtension();
-                $destinationPath = 'foto_laporan/';
+                $destinationPath = 'foto_laporan';
                 $fileName = $originalName;
 
                 // Jika file dengan nama yang sama sudah ada, tambahkan angka numbering
@@ -225,7 +225,6 @@ class LaporanController extends Controller
     public function hapus($id){
         try {
             $foto = FotoLaporan::find($id);
-            $laporanId = $foto->id_laporan;
             $foto->delete();
 
             return redirect()->route('admin.laporan.show', $laporanId)->with('success', 'Foto Dihapus');

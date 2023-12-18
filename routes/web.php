@@ -110,9 +110,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::put('/laporan/update/{id}', [LaporanController::class, 'update'])->middleware('role:admin,petugas')->name('laporan.update');
     Route::put('/laporan/update/status/{id}', [LaporanController::class, 'updateStatus'])->middleware('role:admin,petugas')->name('laporan.update.status');
     Route::delete('/laporan/delete/{id}', [LaporanController::class, 'destroy'])->middleware('role:admin,petugas')->name('laporan.destroy');
-    Route::post('/laporan/upload/{id}', [LaporanSayaController::class, 'upload'])->name('laporan.upload');
-    Route::delete('/laporan/delete/{id}', [LaporanSayaController::class, 'destroy'])->name('laporan.destroy');
-    Route::delete('/laporan/foto/{id}', [LaporanSayaController::class, 'hapus'])->name('laporan.foto.destroy');
+    Route::post('/laporan/upload/{id}', [LaporanController::class, 'upload'])->name('laporan.upload');
+    Route::delete('/laporan/delete/{id}', [LaporanController::class, 'destroy'])->name('laporan.destroy');
+    Route::delete('/laporan/foto/{id}', [LaporanController::class, 'hapus'])->name('laporan.foto.destroy');
     
     // Cetak Laporan
     Route::get('/cetak', [CetakLaporanController::class, 'index'])->middleware('role:admin,petugas')->name('cetak.laporan.index');
